@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+{% for n in news %}
+<section class="content10 cid-tzVgp39K95" id="content10-2">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md">
+                
+                <h6 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">
+                    {{ n.titulo }}
+                </h6>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <p class="mbr-text mbr-fonts-style display-7">
+                    {{ n.texto|truncatewords:20|linebreaks }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content11 cid-tzVh8oOL0w" id="content11-2">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="mbr-section-btn align-center"><a class="btn btn-primary display-4" href="">Leia mais</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% empty %}
+<section class="content10 cid-tzVgp39K95" id="content10-1">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+
+                <h6 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">
+                    Não existem notícias publicadas!
+                </h6>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+{% endblock %}
